@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
 }
@@ -13,4 +13,14 @@ body {
 @theme {
   --font-sans: 'Inter', sans-serif;
 }
+
+.main {
+  padding: 50px 20px 50px;
+  border: 1px solid #E5E7EB;
+}
+
+.input {
+  padding-left: 1rem;
+}
+
 
