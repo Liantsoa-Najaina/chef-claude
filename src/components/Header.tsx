@@ -8,4 +8,4 @@ export default function Header(): JSX.Element {
             <h1 className='text-center font-sans text-3xl font-normal text-gray-800'>Chef Claude</h1>
         </header>
     )
-}
+} 
