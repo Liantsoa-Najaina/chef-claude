@@ -15,8 +15,6 @@ export default function Main():JSX.Element {
         inputRef.current && (inputRef.current.value = "");
     };
 
-    
-
     return (
         <main className="flex flex-col main">
             <form className="flex justify-center gap-3 h-10" onSubmit={handleSubmit}>
