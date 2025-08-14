@@ -1,23 +1,18 @@
-import { useState, useRef , type JSX, type FormEvent } from "react";
+import { useState, useRef , type JSX } from "react";
 
 export default function Main():JSX.Element {
     const [ingredients, setIngredients] = useState<string[]>([]);
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const addIngredient = () => {
         const newIngredient = inputRef.current?.value;
         newIngredient && setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
-        console.log("New ingredient added:", newIngredient);
-        console.log("Ingredients:", ingredients);
-
-        inputRef.current && (inputRef.current.value = "");
     };
 
     return (
         <main className="flex flex-col main">
-            <form className="flex justify-center gap-3 h-10" onSubmit={handleSubmit}>
+            <form className="flex justify-center gap-3 h-10" action={addIngredient}>
                 <input 
                     aria-label="Add ingredient" 
                     placeholder="e.g onions"
