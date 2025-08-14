@@ -1,11 +1,11 @@
-import { useState, useRef , type JSX } from "react";
+import { useState, useRef , type JSX, type FormEvent } from "react";
 
 export default function Main():JSX.Element {
     const [ingredients, setIngredients] = useState<string[]>([]);
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const newIngredient = inputRef.current?.value;
         newIngredient && setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
