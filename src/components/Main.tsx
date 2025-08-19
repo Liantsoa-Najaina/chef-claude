@@ -1,4 +1,5 @@
-import { useState, useRef , type JSX } from "react";
+import { useState, useRef , type JSX, type FormEvent } from "react";
+import IngredientList from "./IngredientList";
 
 export default function Main():JSX.Element {
     const [ingredients, setIngredients] = useState<string[]>([]);
@@ -8,11 +9,19 @@ export default function Main():JSX.Element {
     const addIngredient = () => {
         const newIngredient = inputRef.current?.value;
         newIngredient && setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
+        if (inputRef.current) {
+            inputRef.current.value = '';
+        }
     };
 
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        addIngredient();
+    }
+
     return (
-        <main className="flex flex-col main">
-            <form className="flex justify-center gap-3 h-10" action={addIngredient}>
+        <main className="flex flex-col main gap-3">
+            <form className="flex justify-center gap-3 h-10" onSubmit={handleSubmit}>
                 <input 
                     aria-label="Add ingredient" 
                     placeholder="e.g onions"
@@ -26,10 +35,8 @@ export default function Main():JSX.Element {
                 > 
                     Add ingredient
                 </button>
-            </form> 
-            <ul>
-                {ingredients.map(ingredient => (<li key={ingredient}>{ingredient}</li>))}
-            </ul>
+            </form>
+            { ingredients.length != 0 && <IngredientList ingredients={ingredients}/> }
         </main>
     )  
 }
