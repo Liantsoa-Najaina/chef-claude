@@ -33,7 +33,7 @@ export default function Main():JSX.Element {
                     />
                 </div>
                 <button 
-                    className="flex-1 h-full min-h-[48px] font-sans rounded-lg border-0 bg-[#141413] text-[#FAFAF8] px-6 text-base whitespace-nowrap hover:bg-gray-800 transition-colors before:content-['+'] before:mr-2 before:text-lg flex items-center justify-center"
+                    className="flex-1 h-full min-h-[48px] font-sans rounded-lg border-0 bg-[#20201e] text-[#FAFAF8] px-6 text-base whitespace-nowrap hover:bg-[#141413] transition-colors before:content-['+'] before:mr-2 before:text-lg flex items-center justify-center"
                 > 
                     Add ingredient
                 </button>

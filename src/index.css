@@ -37,4 +37,12 @@ body {
   }
 }
 
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+  @apply mb-2
+}
+
+.recipe-ingredients ul li {
+  @apply my-auto
+}
+
 
