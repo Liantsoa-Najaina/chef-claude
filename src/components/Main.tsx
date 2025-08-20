@@ -20,18 +20,20 @@ export default function Main():JSX.Element {
     }
 
     return (
-        <main className="flex flex-col main gap-3">
-            <form className="flex justify-center gap-3 h-10" onSubmit={handleSubmit}>
-                <input 
-                    aria-label="Add ingredient" 
-                    placeholder="e.g onions"
-                    type="text"
-                    className="rounded-md border border-solid border-[#D1D5DB] w-64 input "
-                    name="Ingredient"
-                    ref={inputRef}
-                />
+        <main className="flex flex-col items-center w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <form className="flex flex-col sm:flex-row w-full gap-4 sm:gap-3 items-stretch max-w-full" onSubmit={handleSubmit}>
+                <div className="flex-[3] min-w-0">
+                    <input 
+                        aria-label="Add ingredient" 
+                        placeholder="e.g onions"
+                        type="text"
+                        className="w-full h-12 rounded-lg border border-solid border-gray-300 px-4 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#141413] focus:border-transparent transition-all"
+                        name="Ingredient"
+                        ref={inputRef}
+                    />
+                </div>
                 <button 
-                    className="font-sans rounded-md border-0 bg-[#141413] text-[#FAFAF8] px-0.5 max-w-44 text-base min-w-36 grow relative before:content-['+'] before:mr-[5px]"
+                    className="flex-1 h-full min-h-[48px] font-sans rounded-lg border-0 bg-[#141413] text-[#FAFAF8] px-6 text-base whitespace-nowrap hover:bg-gray-800 transition-colors before:content-['+'] before:mr-2 before:text-lg flex items-center justify-center"
                 > 
                     Add ingredient
                 </button>
